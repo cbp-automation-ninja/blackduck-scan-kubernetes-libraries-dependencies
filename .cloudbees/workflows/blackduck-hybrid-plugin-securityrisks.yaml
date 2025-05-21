@@ -1,4 +1,4 @@
-name: blackduck-hybrid-plugin-securityrisks
+name: blackduck-hybrid-plugin-security-risks
 kind: workflow
 apiVersion: automation.cloudbees.io/v1alpha1
 on:
