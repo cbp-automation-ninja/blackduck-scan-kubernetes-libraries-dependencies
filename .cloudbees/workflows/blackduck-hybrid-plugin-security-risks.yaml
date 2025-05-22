@@ -4,8 +4,11 @@ apiVersion: automation.cloudbees.io/v1alpha1
 on:
   push:
     branches:
-      - blackduck-hybrid-plugin-test
+      - main
   workflow_dispatch:
+  schedule:
+    - cron: 30 3 * * *
+    - cron: 30 10 * * *
 permissions:
   scm-token-own: read
   scm-token-org: read
@@ -23,6 +26,4 @@ jobs:
           project-name: blackduck-scan-kubernetes-libraries-dependencies
           project-version: 0.0.1
           detect-cli-params: --logging.level.detect=DEBUG --blackduck.offline.mode=false
-        #   detect-cli-params: --detect.detector.required.accuracy=HIGH
           ref: master
-  
